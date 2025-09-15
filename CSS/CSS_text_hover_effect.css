@@ -1,0 +1,92 @@
+body {
+	background-color: #fff;
+	background-image: url(../Media/concrete-wall.png);
+	font-family: "Bungee", sans-serif;
+}
+
+:root {
+	--little-time: .5s;
+	--long-time: 1s;
+	--main-color: #fc2c49;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	width: 300px;
+	padding: 30px;
+	margin: 100px auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	position: relative;
+	transform: scale(2.5);
+}
+
+.container > div {
+	margin: 0;
+	text-align: center;
+	transition: all 0.6s linear;
+}
+
+
+.container > div:nth-child(1) {
+	width: 60%;
+	font-family: monospace;
+	background-color: #ffc107;
+	margin-left: -1px;
+	position: absolute;
+	font-size: 13px;
+	letter-spacing: 3px;
+	transform: scaleY(0);
+	top: 28px;
+	z-index: 4;
+}
+
+.container:hover > div:nth-child(1) {
+	transform: scaleY(1);
+}
+
+.container > div:nth-child(2),
+.container > div:nth-child(3) {
+	font-size: 40px;
+	overflow: hidden;
+	position: absolute;
+	color: transparent;
+	background-size: 100% 200%;
+	-webkit-background-clip: text;
+	-webkit-text-stroke: 1px black;
+}
+
+.container > div:nth-child(2) {
+	clip-path: polygon(0 0, 100% 0, 100% 60%, 0 60%);
+	background-position: bottom;
+	background-image: linear-gradient(black 50%, #ffc107 50%);
+}
+
+.container:hover > div:nth-child(2) {
+	transform: translateY(-7px);
+	-webkit-text-stroke: 1px #ffc107;
+	background-position: top;
+	background-image: linear-gradient(black 50%, #ffc107 50%);
+}
+
+.container > div:nth-child(3) {
+	clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+	background-position: top;
+	background-image: linear-gradient(#ffc107 50%, black 50%);
+}
+
+.container:hover > div:nth-child(3) {
+	transform: translateY(7px);
+	-webkit-text-stroke: 1px #ffc107;
+	background-position: bottom;
+	background-image: linear-gradient(#ffc107 50%, black 50%);
+}
+
+
